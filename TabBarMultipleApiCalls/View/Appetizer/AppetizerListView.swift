@@ -26,7 +26,6 @@ struct AppetizerListView: View {
                 List(filteredAppetizers) { appetizer in
                     AppetizerCell(appetizer: appetizer)
                 }
-                .navigationTitle("🍟 Appetizers")
                 .searchable(text: $searchTerm, prompt: "Search Appetizers")
             }
             .task {
@@ -37,6 +36,7 @@ struct AppetizerListView: View {
                 LoadingView()
             }
         }
+        .navigationTitle("🍟 Appetizers")
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(
                 title: alertItem.title,

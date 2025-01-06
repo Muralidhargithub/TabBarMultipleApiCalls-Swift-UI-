@@ -26,3 +26,7 @@ struct AppetizerCell: View {
         .padding(.vertical, 5)
     }
 }
+
+#Preview {
+    ContentView()
+}

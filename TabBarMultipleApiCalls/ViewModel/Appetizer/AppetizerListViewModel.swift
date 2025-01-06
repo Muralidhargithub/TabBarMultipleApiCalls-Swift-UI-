@@ -24,7 +24,7 @@ final class AppetizerListViewModel: ObservableObject {
     func fetchAppetizers() async {
         isLoading = true
         do {
-            let url = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers"
+            let url = ServerConstants.appetizer
             let response: AppetizerResponse = try await networkManager.getData(url: url)
             appetizers = response.request
         } catch {
