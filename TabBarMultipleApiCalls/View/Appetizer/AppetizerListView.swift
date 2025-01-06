@@ -27,6 +27,18 @@ struct AppetizerListView: View {
                     AppetizerCell(appetizer: appetizer)
                 }
                 .searchable(text: $searchTerm, prompt: "Search Appetizers")
+                .navigationTitle("🍟 Appetizers")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                                ToolbarItem(placement: .principal) {
+                                    Text("🍟 Appetizers")
+                                        .font(.largeTitle)
+                                        .fontWeight(.bold)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom, 20)
+                                }
+                            }
+
             }
             .task {
                 await viewModel.fetchAppetizers()
@@ -36,7 +48,7 @@ struct AppetizerListView: View {
                 LoadingView()
             }
         }
-        .navigationTitle("🍟 Appetizers")
+        //.navigationTitle("🍟 Appetizers")
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(
                 title: alertItem.title,
@@ -45,4 +57,8 @@ struct AppetizerListView: View {
             )
         }
     }
+}
+
+#Preview {
+    ContentView()
 }

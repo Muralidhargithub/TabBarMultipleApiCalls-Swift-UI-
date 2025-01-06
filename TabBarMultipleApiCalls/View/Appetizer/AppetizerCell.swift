@@ -27,6 +27,3 @@ struct AppetizerCell: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
