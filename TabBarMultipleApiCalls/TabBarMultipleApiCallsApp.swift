@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+
 @main
-struct TabBarMultipleApiCallsApp: App {
+struct TabBarMultipleApiCalls: App {
+    @StateObject private var appState = AppState()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
+                .environmentObject(appState)
         }
     }
 }

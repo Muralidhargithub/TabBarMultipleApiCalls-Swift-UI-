@@ -31,12 +31,19 @@ struct ContentView: View {
                 .tabItem {
                     Label("Users", systemImage: "person.3.fill")
                 }
-            PhotoListView()
+
+            ProfileView()
                 .tabItem {
-                    Label("Photos", systemImage: "photo")
+                    Label("Profile", systemImage: "person")
                 }
-            
         }
     }
 }
 
+#Preview {
+        LoginView()
+            .environmentObject(AppState())
+            .previewDisplayName("Login Screen")
+
+
+}

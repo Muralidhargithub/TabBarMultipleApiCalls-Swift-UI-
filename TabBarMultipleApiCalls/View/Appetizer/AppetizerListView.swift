@@ -59,6 +59,3 @@ struct AppetizerListView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
